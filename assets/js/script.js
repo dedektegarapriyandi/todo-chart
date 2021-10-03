@@ -27,25 +27,24 @@ const addItem = (e) => {
     e.preventDefault();
 
     // check local storage
-    if(localStorage.getItem("list-item") === null) {
+    if (localStorage.getItem("list-item") === null) {
         data = [];
-
-    }else {
+    } else {
         data = JSON.parse(localStorage.getItem("list-item"));
     }
 
     // check input
-    if(input.value === "") {
+    if (input.value === "") {
         return alert("Harus diisi");
 
-    } 
+    }
 
     // check itemName
     const items = listItem.childNodes;
-    for(i = 0; i < items.length; i++) {
+    for (i = 0; i < items.length; i++) {
         const itemName = items[i].children[0].innerText;
-        
-        if(input.value.toLowerCase() == itemName.toLowerCase()) {
+
+        if (input.value.toLowerCase() == itemName.toLowerCase()) {
             input.value = "";
             return alert(itemName + " Sudah ada");
         }
@@ -59,4 +58,18 @@ const addItem = (e) => {
     input.value = "";
 }
 
+const getData = () => {
+    // check local storage
+    if (localStorage.getItem("list-item") === null) {
+        data = [];
+    } else {
+        data = JSON.parse(localStorage.getItem("list-item"));
+    }
+
+    data.forEach((i) => {
+        createElement(i, "cart-btn");
+    });
+}
+
 submit.addEventListener("click", addItem);
+window.addEventListener("DOMContentLoaded", getData)
