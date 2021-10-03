@@ -14,6 +14,26 @@
   pointer-events: none;
 }
 
+.slide-out {
+  transform: translateX(100%);
+  opacity: 0;
+  transition: 0.8s ease;
+}
+
+.slide-in {
+  animation: slideIn 0.8s ease forwards;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
 .header {
   display: flex;
   flex-direction: column;
@@ -111,6 +131,7 @@
   padding: 0.5rem;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  animation: slideIn 0.8s ease forwards;
 }
 .content .carts .list-cart .item .item-name {
   flex: 1;

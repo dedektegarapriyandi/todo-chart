@@ -98,7 +98,11 @@ const addToCart = (e) => {
 
         const index = btn.previousSibling.innerText.toLowerCase();
         data.splice(data.indexOf(index), 1);
-        btn.parentElement.remove();
+
+        btn.parentElement.classList.add("slide-out");
+        btn.parentElement.addEventListener("transitionend", () => {
+            btn.parentElement.remove();
+        });
 
         createElement(index, "trash-btn", "fa fa-trash");
         cartList.push(index);

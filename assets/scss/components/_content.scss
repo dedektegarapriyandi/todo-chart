@@ -60,6 +60,7 @@
                 padding: .5rem;
                 border-radius: 5px;
                 box-shadow: 0 0 10px rgba(0,0,0,.2);
+                animation: slideIn .8s ease forwards;
 
                 .item-name {
                     flex: 1;

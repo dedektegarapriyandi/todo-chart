@@ -13,3 +13,24 @@
 .fa {
     pointer-events: none;
 }
+
+.slide-out {
+    transform: translateX(100%);
+    opacity: 0;
+    transition: .8s ease;
+}
+
+.slide-in {
+    animation: slideIn .8s ease forwards;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
