@@ -1,0 +1,35 @@
+@use "../mixin" as mix;
+
+.header {
+    @include mix.flexBox(column, center, start);
+    height: 30vh;
+
+    .title {
+        margin: 1rem;
+        font-weight: 400;
+    }
+
+    .form {
+        margin: 2rem;
+
+        .todo-input {
+            width: 300px;
+            position: relative;
+            outline: none;
+            border: none;
+            padding: .5em;
+            font-size: 1rem;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,.1);
+            margin: 0 auto;
+        }
+
+        .btn-submit {
+            font-size: 1rem;
+            padding: .5em .7em;
+            margin-left: -35px;
+            z-index: 1;
+            position: absolute;
+        }
+    }
+}

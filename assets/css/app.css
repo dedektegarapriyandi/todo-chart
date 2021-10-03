@@ -1,3 +1,48 @@
+.container {
+  max-width: 1455px;
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+
+.btn {
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  height: 30vh;
+}
+.header .title {
+  margin: 1rem;
+  font-weight: 400;
+}
+.header .form {
+  margin: 2rem;
+}
+.header .form .todo-input {
+  width: 300px;
+  position: relative;
+  outline: none;
+  border: none;
+  padding: 0.5em;
+  font-size: 1rem;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+}
+.header .form .btn-submit {
+  font-size: 1rem;
+  padding: 0.5em 0.7em;
+  margin-left: -35px;
+  z-index: 1;
+  position: absolute;
+}
+
 * {
   margin: 0;
   padding: 0;

@@ -1,3 +1,7 @@
+@use "./global";
+@use "./components/header";
+@use "./mixin";
+
 * {
     margin: 0;
     padding: 0;
