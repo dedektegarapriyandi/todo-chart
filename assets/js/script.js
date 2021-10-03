@@ -66,10 +66,32 @@ const getData = () => {
         data = JSON.parse(localStorage.getItem("list-item"));
     }
 
+    // show data
     data.forEach((i) => {
         createElement(i, "cart-btn");
     });
 }
 
+const addToCart = (e) => {
+    const btn = e.target;
+    if(btn.classList.contains("cart-btn")) {
+        if(localStorage.getItem("cart-list") === null) {
+            cartList = [];
+        }else {
+            cartList = JSON.parse(localStorage.getItem("cart-list"));
+        }
+
+        const index = btn.previousSibling.innerText.toLowerCase();
+        const newCart = data.splice(data.indexOf(index), 1);
+        btn.parentElement.remove();
+
+        cartList.push(index);
+
+        localStorage.setItem("list-item", JSON.stringify(data));
+        localStorage.setItem("cart-list", JSON.stringify(cartList));
+    }
+}
+
 submit.addEventListener("click", addItem);
-window.addEventListener("DOMContentLoaded", getData)
+window.addEventListener("DOMContentLoaded", getData);
+listItem.addEventListener("click", addToCart);
