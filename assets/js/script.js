@@ -1,8 +1,9 @@
 const input = document.querySelector(".item-input");
 const submit = document.querySelector(".btn-submit");
 const listItem = document.querySelector(".list-item");
+const cartItem = document.querySelector(".list-cart");
 
-const createElement = (item, type) => {
+const createElement = (item, type, icon) => {
     // div
     const newDiv = document.createElement("div");
     newDiv.classList.add("item");
@@ -16,11 +17,15 @@ const createElement = (item, type) => {
     // button
     const newBtn = document.createElement("button");
     newBtn.classList.add("btn", type);
-    newBtn.innerHTML = "<i class='fa fa-cart-plus'></i>";
+    newBtn.innerHTML = `<i class='fa ${icon}'></i>`;
     newDiv.appendChild(newBtn);
 
-    // append to listItem
-    listItem.appendChild(newDiv);
+    if(type == "cart-btn") {
+        // append to listItem
+        listItem.appendChild(newDiv);
+    }else {
+        cartItem.appendChild(newDiv);
+    }
 }
 
 const addItem = (e) => {
@@ -52,7 +57,7 @@ const addItem = (e) => {
 
     // add data
     data.push(input.value);
-    createElement(input.value, "cart-btn");
+    createElement(input.value, "cart-btn", "fa-cart-plus");
     localStorage.setItem("list-item", JSON.stringify(data));
 
     input.value = "";
@@ -65,10 +70,20 @@ const getData = () => {
     } else {
         data = JSON.parse(localStorage.getItem("list-item"));
     }
+    if(localStorage.getItem("cart-list") === null) {
+        cartList = [];
+    }else {
+        cartList = JSON.parse(localStorage.getItem("cart-list"));
+    }
 
-    // show data
+    // show data 
     data.forEach((i) => {
-        createElement(i, "cart-btn");
+        createElement(i, "cart-btn", "fa-cart-plus");
+    });
+
+    // show cart list
+    cartList.forEach((i) => {
+        createElement(i, "trash-btn", "fa-trash");
     });
 }
 
@@ -82,9 +97,10 @@ const addToCart = (e) => {
         }
 
         const index = btn.previousSibling.innerText.toLowerCase();
-        const newCart = data.splice(data.indexOf(index), 1);
+        data.splice(data.indexOf(index), 1);
         btn.parentElement.remove();
 
+        createElement(index, "trash-btn", "fa fa-trash");
         cartList.push(index);
 
         localStorage.setItem("list-item", JSON.stringify(data));
