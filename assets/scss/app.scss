@@ -1,10 +1,15 @@
 @use "./global";
-@use "./components/header";
 @use "./mixin";
+@use "./components/header";
+@use "./components/content";
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #a9a9a9;
 }

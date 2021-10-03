@@ -24,7 +24,7 @@
 .header .form {
   margin: 2rem;
 }
-.header .form .todo-input {
+.header .form .item-input {
   width: 300px;
   position: relative;
   outline: none;
@@ -41,6 +41,80 @@
   margin-left: -35px;
   z-index: 1;
   position: absolute;
+  background-color: green;
+  color: white;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  justify-content: start;
+  padding: 1rem;
+}
+.content .items {
+  flex: 1;
+}
+.content .items .title {
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+.content .items .list-item {
+  list-style: none;
+}
+.content .items .list-item .item {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  justify-content: start;
+  width: 40%;
+  margin: 0.8rem 0;
+  padding: 0.5rem;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.content .items .list-item .item .item-name {
+  flex: 1;
+  font-size: 1rem;
+}
+.content .items .list-item .item .cart-btn {
+  font-size: 1rem;
+  color: green;
+  border-radius: 50%;
+}
+.content .carts {
+  flex: 1;
+}
+.content .carts .title {
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+.content .carts .list-cart {
+  list-style: none;
+}
+.content .carts .list-cart .item {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  justify-content: start;
+  width: 40%;
+  margin: 0.8rem 0;
+  background-color: white;
+  padding: 0.5rem;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.content .carts .list-cart .item .item-name {
+  flex: 1;
+  font-size: 1rem;
+}
+.content .carts .list-cart .item .trash-btn {
+  font-size: 1rem;
+  color: red;
+  border-radius: 50%;
 }
 
 * {
@@ -48,6 +122,10 @@
   padding: 0;
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: #a9a9a9;
 }
 
 /*# sourceMappingURL=app.css.map */

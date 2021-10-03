@@ -1,0 +1,76 @@
+@use "../mixin" as mix;
+
+.content {
+    @include mix.flexBox(row, start, start);
+    padding: 1rem;
+
+    .items {
+        flex: 1;
+
+        .title {
+            font-weight: 400;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+
+        .list-item {
+            list-style: none;
+            
+            .item {
+                @include mix.flexBox(row, start,start);
+                width: 40%;
+                margin: .8rem 0;
+                padding: .5rem;
+                border-radius: 5px;
+                background-color: white;
+                box-shadow: 0 0 10px rgba(0,0,0,.2);
+
+                .item-name {
+                    flex: 1;
+                    font-size: 1rem;
+                }
+
+                .cart-btn {
+                    font-size: 1rem;
+                    color: green;
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+
+    .carts {
+        flex: 1;
+
+        .title {
+            font-weight: 400;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+
+        .list-cart {
+            list-style: none;
+            
+            .item {
+                @include mix.flexBox(row, start,start);
+                width: 40%;
+                margin: .8rem 0;
+                background-color: white;
+                padding: .5rem;
+                border-radius: 5px;
+                box-shadow: 0 0 10px rgba(0,0,0,.2);
+
+                .item-name {
+                    flex: 1;
+                    font-size: 1rem;
+                }
+
+                .trash-btn {
+                    font-size: 1rem;
+                    color: red;
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+}

@@ -16,14 +16,51 @@
 
     <div class="container">
         <header class="header">
-            <h1 class="title">Todo Chart</h1>
+            <h1 class="title">Todo Cart</h1>
             <form class="form">
-                <input type="text" class="todo-input">
+                <input type="text" class="item-input">
                 <button class="btn btn-submit">
                     <i class="fa fa-plus"></i>
                 </button>
             </form>
         </header>
+
+        <section class="content">
+            <div class="items">
+                <h2 class="title">Items</h2>
+                <ul class="list-item">
+                    <div class="item">
+                        <li class="item-name">Vegetables</li>
+                        <button class="btn cart-btn">
+                            <i class="fa fa-cart-plus"></i>
+                        </button>
+                    </div>
+                    <div class="item">
+                        <li class="item-name">Vegetables</li>
+                        <button class="btn cart-btn">
+                            <i class="fa fa-cart-plus"></i>
+                        </button>
+                    </div>
+                </ul>
+            </div>
+            <div class="carts">
+                <h2 class="title">cart</h2>
+                <ul class="list-cart">
+                    <div class="item">
+                        <li class="item-name">Vegetables</li>
+                        <button class="btn trash-btn">
+                            <i class="fa fa-trash"></i>
+                        </button>
+                    </div>
+                    <div class="item">
+                        <li class="item-name">Vegetables</li>
+                        <button class="btn trash-btn">
+                            <i class="fa fa-trash"></i>
+                        </button>
+                    </div>
+                </ul>
+            </div>
+        </section>
     </div>
 
     <script src="./assets/js/script.js"></script>

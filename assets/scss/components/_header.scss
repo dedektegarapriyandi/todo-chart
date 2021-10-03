@@ -12,7 +12,7 @@
     .form {
         margin: 2rem;
 
-        .todo-input {
+        .item-input {
             width: 300px;
             position: relative;
             outline: none;
@@ -30,6 +30,8 @@
             margin-left: -35px;
             z-index: 1;
             position: absolute;
+            background-color: green;
+            color: white;
         }
     }
 }
