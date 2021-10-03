@@ -26,6 +26,7 @@ const createElement = (item, type) => {
 const addItem = (e) => {
     e.preventDefault();
 
+    // check local storage
     if(localStorage.getItem("list-item") === null) {
         data = [];
 
@@ -33,11 +34,13 @@ const addItem = (e) => {
         data = JSON.parse(localStorage.getItem("list-item"));
     }
 
+    // check input
     if(input.value === "") {
         return alert("Harus diisi");
 
     } 
 
+    // check itemName
     const items = listItem.childNodes;
     for(i = 0; i < items.length; i++) {
         const itemName = items[i].children[0].innerText;
@@ -48,6 +51,7 @@ const addItem = (e) => {
         }
     }
 
+    // add data
     data.push(input.value);
     createElement(input.value, "cart-btn");
     localStorage.setItem("list-item", JSON.stringify(data));
