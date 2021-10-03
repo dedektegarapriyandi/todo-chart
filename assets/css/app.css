@@ -78,6 +78,7 @@
 .content .items .list-item .item .item-name {
   flex: 1;
   font-size: 1rem;
+  text-transform: capitalize;
 }
 .content .items .list-item .item .cart-btn {
   font-size: 1rem;
@@ -110,6 +111,7 @@
 .content .carts .list-cart .item .item-name {
   flex: 1;
   font-size: 1rem;
+  text-transform: capitalize;
 }
 .content .carts .list-cart .item .trash-btn {
   font-size: 1rem;
