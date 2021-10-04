@@ -112,6 +112,20 @@ const addToCart = (e) => {
     }
 }
 
+const removeCart = (e) => {
+    const btn = e.target;
+    if(btn.classList.contains("trash-btn")) {
+        const index = btn.parentElement.children[0].innerText.toLowerCase();
+        cartList = JSON.parse(localStorage.getItem("cart-list"));
+        
+        cartList.splice(cartList.indexOf(index), 1);
+        btn.parentElement.remove();
+
+        localStorage.setItem("cart-list", JSON.stringify(cartList));
+    }
+}
+
 submit.addEventListener("click", addItem);
 window.addEventListener("DOMContentLoaded", getData);
 listItem.addEventListener("click", addToCart);
+cartItem.addEventListener("click", removeCart);
