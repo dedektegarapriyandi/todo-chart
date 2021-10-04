@@ -56,7 +56,7 @@ const addItem = (e) => {
     }
 
     // add data
-    data.push(input.value);
+    data.push(input.value.toLowerCase());
     createElement(input.value, "cart-btn", "fa-cart-plus");
     localStorage.setItem("list-item", JSON.stringify(data));
 
